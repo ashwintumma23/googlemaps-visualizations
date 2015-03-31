@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Info window with <code>maxWidth</code></title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+
+function initialize() {
+  var myLatlng = new google.maps.LatLng(40.7472569628042, -73.99017333984375);
+
+
+
+
+
+
+  var myLatlng1 = new google.maps.LatLng(40.67803437027595,-73.93867492675781);
+
+
+  var mapOptions = {
+    zoom: 6,
+    center: myLatlng
+  };
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">New York City Marathon</h1>'+
+      '<div id="bodyContent">'+
+
+'The New York City Marathon (branded TCS New York City Marathon and formerly branded ING New York City Marathon for sponsorship reasons) is an annual marathon (42.195 km or 26.219 mi) that courses through the five boroughs of New York City. It is the largest marathon in the world,[3] with 50,304 finishers in 2013.'+
+     '<p>Read more on the website, <a href="http://www.tcsnycmarathon.org/">'+
+      'Website</a> '+
+      '.</p>'+
+      '</div>'+
+      '</div>';
+
+
+  var contentString1 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Ashwin Sample Event in Brooklyn</h1>'+
+      '<div id="bodyContent">'+
+
+'The New York City Marathon (branded TCS New York City Marathon and formerly branded ING New York City Marathon for sponsorship reasons) is an annual marathon (42.195 km or 26.219 mi) that courses through the five boroughs of New York City. It is the largest marathon in the world,[3] with 50,304 finishers in 2013.'+
+     '<p>Read more on the website, <a href="http://www.tcsnycmarathon.org/">'+
+      'Website</a> '+
+      '.</p>'+
+      '</div>'+
+      '</div>';
+
+  drawPin(map, myLatlng, contentString, 'red');
+  drawPin(map, myLatlng1, contentString1, 'green');
+
+
+      
+/*
+  
+var contentString1 = "Ashwin Tumma"
+var infowindow1 = new google.maps.InfoWindow({
+      content: contentString1,
+      maxWidth: 200
+  });
+
+  var myLatlng1 = new google.maps.LatLng(-25.363882,135.044922);
+  var marker1 = new google.maps.Marker({
+      position: myLatlng1,
+      map: map,
+      title: 'Ashwin Tumma'
+  });
+  google.maps.event.addListener(marker1, 'click', function() {
+    infowindow1.open(map,marker1);
+  });
+}
+*/
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+function drawPin(map, myLatlng,contentString, color){
+
+var coloricon = "http://maps.google.com/mapfiles/ms/icons/" + color + ".png";
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      icon: new google.maps.MarkerImage(coloricon),	
+      title: 'New York City Marathon'
+
+  });
+
+var infowindow = new google.maps.InfoWindow({
+      content: contentString,
+      maxWidth: 200
+  });
+
+  marker.setVisible(false);
+  google.maps.event.addListener(marker, 'rightclick', function() {
+    infowindow.open(map,marker);
+  });
+
+google.maps.event.addListener(map, 'zoom_changed', function() {
+    var zoom = map.getZoom();
+    alert("Zoom = "+zoom);
+    marker.setVisible(zoom >= 8);
+});
+}
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
