@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple Polylines</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+
+function initialize() {
+  var mapOptions = {
+    zoom: 2,
+    center: new google.maps.LatLng(44.15068115978094, -11.25),
+    mapTypeId: google.maps.MapTypeId.TERRAIN
+  };
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+  var flightArray = [];
+  var colorArray = [];
+
+var flightPlanCoordinates1 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(34.6836, 113.5325)]; 
+flightArray.push(flightPlanCoordinates1);
+colorArray.push('#66FF99');var flightPlanCoordinates2 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(37.3762, -122.1826)]; 
+flightArray.push(flightPlanCoordinates2);
+colorArray.push('#00FF00');var flightPlanCoordinates3 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates3);
+colorArray.push('#00FF00');var flightPlanCoordinates4 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(55.75, 37.6166)]; 
+flightArray.push(flightPlanCoordinates4);
+colorArray.push('#000000');var flightPlanCoordinates5 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates5);
+colorArray.push('#000000');var flightPlanCoordinates6 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates6);
+colorArray.push('#FF0000');var flightPlanCoordinates7 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(34.6836, 113.5325)]; 
+flightArray.push(flightPlanCoordinates7);
+colorArray.push('#00FF00');var flightPlanCoordinates8 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(34.6836, 113.5325)]; 
+flightArray.push(flightPlanCoordinates8);
+colorArray.push('#66FF99');var flightPlanCoordinates9 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates9);
+colorArray.push('#000000');var flightPlanCoordinates10 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(34.6836, 113.5325)]; 
+flightArray.push(flightPlanCoordinates10);
+colorArray.push('#00FF00');var flightPlanCoordinates11 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates11);
+colorArray.push('#66FF99');var flightPlanCoordinates12 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(60.4, 25.6667)]; 
+flightArray.push(flightPlanCoordinates12);
+colorArray.push('#000000');var flightPlanCoordinates13 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(37.3762, -122.1826)]; 
+flightArray.push(flightPlanCoordinates13);
+colorArray.push('#FF0000');var flightPlanCoordinates14 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(37.3762, -122.1826)]; 
+flightArray.push(flightPlanCoordinates14);
+colorArray.push('#000000');var flightPlanCoordinates15 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(37.3762, -122.1826)]; 
+flightArray.push(flightPlanCoordinates15);
+colorArray.push('#66FF99');var flightPlanCoordinates16 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(37.3762, -122.1826)]; 
+flightArray.push(flightPlanCoordinates16);
+colorArray.push('#00FF00');var flightPlanCoordinates17 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates17);
+colorArray.push('#0000FF');var flightPlanCoordinates18 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates18);
+colorArray.push('#000000');var flightPlanCoordinates19 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates19);
+colorArray.push('#0000FF');var flightPlanCoordinates20 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates20);
+colorArray.push('#00FF00');var flightPlanCoordinates21 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates21);
+colorArray.push('#0000FF');var flightPlanCoordinates22 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates22);
+colorArray.push('#000000');var flightPlanCoordinates23 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates23);
+colorArray.push('#000000');var flightPlanCoordinates24 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates24);
+colorArray.push('#0000FF');var flightPlanCoordinates25 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates25);
+colorArray.push('#66FF99');var flightPlanCoordinates26 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(37.3762, -122.1826)]; 
+flightArray.push(flightPlanCoordinates26);
+colorArray.push('#000000');var flightPlanCoordinates27 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(37.3762, -122.1826)]; 
+flightArray.push(flightPlanCoordinates27);
+colorArray.push('#0000FF');var flightPlanCoordinates28 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(37.3762, -122.1826)]; 
+flightArray.push(flightPlanCoordinates28);
+colorArray.push('#FF0000');var flightPlanCoordinates29 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates29);
+colorArray.push('#66FF99');var flightPlanCoordinates30 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates30);
+colorArray.push('#00FF00');var flightPlanCoordinates31 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates31);
+colorArray.push('#0000FF');var flightPlanCoordinates32 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates32);
+colorArray.push('#000000');var flightPlanCoordinates33 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates33);
+colorArray.push('#000000');var flightPlanCoordinates34 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates34);
+colorArray.push('#66FF99');var flightPlanCoordinates35 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates35);
+colorArray.push('#66FF99');var flightPlanCoordinates36 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates36);
+colorArray.push('#66FF99');var flightPlanCoordinates37 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates37);
+colorArray.push('#66FF99');var flightPlanCoordinates38 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(39.8733, -4.0445)]; 
+flightArray.push(flightPlanCoordinates38);
+colorArray.push('#FF0000');var flightPlanCoordinates39 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(39.8733, -4.0445)]; 
+flightArray.push(flightPlanCoordinates39);
+colorArray.push('#FF0000');var flightPlanCoordinates40 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates40);
+colorArray.push('#000000');var flightPlanCoordinates41 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates41);
+colorArray.push('#FF0000');var flightPlanCoordinates42 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates42);
+colorArray.push('#000000');var flightPlanCoordinates43 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates43);
+colorArray.push('#FF0000');var flightPlanCoordinates44 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates44);
+colorArray.push('#00FF00');var flightPlanCoordinates45 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates45);
+colorArray.push('#0000FF');var flightPlanCoordinates46 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(37.3762, -122.1826)]; 
+flightArray.push(flightPlanCoordinates46);
+colorArray.push('#000000');var flightPlanCoordinates47 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates47);
+colorArray.push('#000000');var flightPlanCoordinates48 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(38, -97)]; 
+flightArray.push(flightPlanCoordinates48);
+colorArray.push('#66FF99');var flightPlanCoordinates49 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(34.6836, 113.5325)]; 
+flightArray.push(flightPlanCoordinates49);
+colorArray.push('#66FF99');var flightPlanCoordinates50 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates50);
+colorArray.push('#FF0000');var flightPlanCoordinates51 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates51);
+colorArray.push('#FF0000');var flightPlanCoordinates52 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(34.6836, 113.5325)]; 
+flightArray.push(flightPlanCoordinates52);
+colorArray.push('#000000');var flightPlanCoordinates53 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates53);
+colorArray.push('#00FF00');var flightPlanCoordinates54 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(39.9289, 116.3883)]; 
+flightArray.push(flightPlanCoordinates54);
+colorArray.push('#00FF00');var flightPlanCoordinates55 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates55);
+colorArray.push('#66FF99');var flightPlanCoordinates56 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates56);
+colorArray.push('#FF0000');var flightPlanCoordinates57 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(51.5, -0.13)]; 
+flightArray.push(flightPlanCoordinates57);
+colorArray.push('#000000');var flightPlanCoordinates58 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates58);
+colorArray.push('#0000FF');var flightPlanCoordinates59 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates59);
+colorArray.push('#00FF00');var flightPlanCoordinates60 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates60);
+colorArray.push('#66FF99');var flightPlanCoordinates61 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(37.3762, -122.1826)]; 
+flightArray.push(flightPlanCoordinates61);
+colorArray.push('#FF0000');var flightPlanCoordinates62 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(34.6836, 113.5325)]; 
+flightArray.push(flightPlanCoordinates62);
+colorArray.push('#00FF00');var flightPlanCoordinates63 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(-34.6033, -58.3817)]; 
+flightArray.push(flightPlanCoordinates63);
+colorArray.push('#00FF00');var flightPlanCoordinates64 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(34.6836, 113.5325)]; 
+flightArray.push(flightPlanCoordinates64);
+colorArray.push('#FF0000');var flightPlanCoordinates65 = [ new google.maps.LatLng(51.5,-0.13), new google.maps.LatLng(42.2776, -83.7409)]; 
+flightArray.push(flightPlanCoordinates65);
+colorArray.push('#66FF99');
+// Code for displaying the polylines in the browser
+  for(var i=0; i < flightArray.length; i++) {
+  
+  var flightPath = new google.maps.Polyline({
+    path: flightArray[i],
+    geodesic: true,
+    strokeColor: colorArray[i],
+    strokeOpacity: 1.0,
+    strokeWeight: 3
+  });
+  flightPath.setMap(map);
+  }
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
+
+

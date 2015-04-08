@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="c3.css">
+  </head>
+  <body>
+    <div id="chart"></div>
+	
+<h1 align="center"> Timeseries Data Visualization</h1>
+<p>
+<ul>
+<li>0: 2015-03-01</li>
+<li>1: 2015-03-02</li>
+<li>2: 2015-03-03</li>
+<li>3: 2015-03-04</li>
+</ul>
+</p>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="c3.js"></script>
+    <script>
+      var chart = c3.generate({
+        data: {
+          columns: [
+            ['Fixing Trading Service', 310, 290, 290, 310],
+            ['Research Analysis',301, 329, 303, 306],
+            ['Regulatory Reporting', 283, 293, 308, 283],
+            ['Development',289, 304, 299,324],
+            ['Quality Engineering', 317, 284,300, 277]
+          ],
+          onclick: function (d, element) { console.log("onclick", d, element); },
+          onmouseover: function (d) { console.log("onmouseover", d); },
+          onmouseout: function (d) { console.log("onmouseout", d); },
+        }
+      });
+    </script>
+  </body>
+</html>
