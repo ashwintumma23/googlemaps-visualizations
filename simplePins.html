@@ -112,7 +112,6 @@ var infowindow = new google.maps.InfoWindow({
 
 google.maps.event.addListener(map, 'zoom_changed', function() {
     var zoom = map.getZoom();
-    alert("Zoom = "+zoom);
     marker.setVisible(zoom >= 8);
 });
 }
